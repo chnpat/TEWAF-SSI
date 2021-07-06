@@ -1,0 +1,42 @@
+{
+    "SSI Systemic Meaning": [
+        {
+            "id" : 1,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "use"
+            ],
+            "data": [
+                "username",
+                "password"
+            ]
+        },
+        {
+            "id" : 2,
+            "subject": [
+                "wallet application"
+            ],
+            "operation": [
+                "verify"
+            ],
+            "data": [
+                "username",
+                "password"
+            ]
+        },
+        {
+            "id" : 3,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "create"
+            ],
+            "data": [
+                "identity"
+            ]
+        }
+    ]
+}

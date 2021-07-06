@@ -1,0 +1,18 @@
+{
+    "CWE.Entries" : [
+        {
+            "id" : 284,
+            "SystemComponent" : [
+                "software",
+                "user"
+            ],
+            "SystemFunction" : [
+                "restrict",
+                "access"
+            ],
+            "SystemObject" : [
+                "resource"
+            ]
+        }
+    ]
+}
