@@ -8,7 +8,8 @@
             ],
             "SystemFunction" : [
                 "restrict",
-                "access"
+                "access",
+                "verify"
             ],
             "SystemObject" : [
                 "resource"

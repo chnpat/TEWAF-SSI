@@ -67,7 +67,7 @@ class SystemicMeaning:
                     notions["SSI.notions"].append({"term": more_term_list})
 
         self.data = list(new_data)
-        return notions
+        return notions, notions
 
     def get_synonym_set(self):
         syn = set()
@@ -79,4 +79,10 @@ class SystemicMeaning:
                     syn.add(lemma.name())   
             syn.add(op)
         
-        self.operation = list(syn)
+        list_syn = list(syn)
+        break_list_syn = []
+        for s in list_syn:
+            break_list_syn.append(str(s).replace("_", " "))
+
+        self.operation = list(break_list_syn)
+
