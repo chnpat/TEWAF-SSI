@@ -1,42 +1,166 @@
 {
     "SSI Systemic Meaning": [
         {
-            "id" : 1,
-            "subject": [
-                "holder"
-            ],
-            "operation": [
-                "use"
-            ],
-            "data": [
-                "username",
-                "password"
-            ]
+          "id": 1,
+          "subject": ["owner", "uPort mobile application"],
+          "operation": ["register"],
+          "data": ["username", "password"]
         },
         {
-            "id" : 2,
-            "subject": [
-                "wallet application"
-            ],
-            "operation": [
-                "verify"
-            ],
-            "data": [
-                "username",
-                "password"
-            ]
+          "id": 2,
+          "subject": ["owner"],
+          "operation": ["create"],
+          "data": ["identity"]
         },
         {
-            "id" : 3,
-            "subject": [
-                "holder"
-            ],
-            "operation": [
-                "create"
-            ],
-            "data": [
-                "identity"
-            ]
+          "id": 3,
+          "subject": ["owner"],
+          "operation": ["change"],
+          "data": ["identity"]
+        },
+        {
+          "id": 4,
+          "subject": ["owner"],
+          "operation": ["read"],
+          "data": ["identity"]
+        },
+        {
+          "id": 5,
+          "subject": ["owner"],
+          "operation": ["delete"],
+          "data": ["identity"]
+        },
+        {
+          "id": 6,
+          "subject": ["uPort mobile application", "Ethereum Blockchain"],
+          "operation": ["initiate"],
+          "data": ["proxy smart contract", "key"]
+        },
+        {
+          "id": 7,
+          "subject": ["Ethereum Blockchain"],
+          "operation": ["initiate"],
+          "data": ["IPFS"]
+        },
+        {
+          "id": 8,
+          "subject": ["uPort mobile application", "Ethereum Blockchain"],
+          "operation": ["write"],
+          "data": ["identity", "key"]
+        },
+        {
+          "id": 9,
+          "subject": ["Ethereum Blockchain", "IPFS"],
+          "operation": ["write"],
+          "data": ["identity", "key,"]
+        },
+        {
+          "id": 10,
+          "subject": ["owner"],
+          "operation": ["use"],
+          "data": ["client application"]
+        },
+        {
+          "id": 11,
+          "subject": ["client application", "uPort mobile application"],
+          "operation": ["send"],
+          "data": ["connection request"]
+        },
+        {
+          "id": 12,
+          "subject": ["uPort mobile application", "owner"],
+          "operation": ["ask"],
+          "data": ["request"]
+        },
+        {
+          "id": 13,
+          "subject": ["owner", "uPort mobile application"],
+          "operation": ["authorize"],
+          "data": ["request"]
+        },
+        {
+          "id": 14,
+          "subject": ["owner", "uPort mobile application"],
+          "operation": ["reject"],
+          "data": ["request"]
+        },
+        {
+          "id": 15,
+          "subject": ["uPort mobile application", "client application"],
+          "operation": ["send"],
+          "data": ["response"]
+        },
+        {
+          "id": 16,
+          "subject": ["issuer", "uPort mobile application"],
+          "operation": ["ask"],
+          "data": ["selective disclosure"]
+        },
+        {
+          "id": 17,
+          "subject": ["issuer", "uPort mobile application"],
+          "operation": ["verify"],
+          "data": ["selective disclosure response"]
+        },
+        {
+          "id": 18,
+          "subject": ["issuer", "uPort mobile application"],
+          "operation": ["send to"],
+          "data": ["signed selective disclosure"]
+        },
+        {
+          "id": 19,
+          "subject": ["uPort mobile application"],
+          "operation": ["save"],
+          "data": ["signed selective disclosure"]
+        },
+        {
+          "id": 20,
+          "subject": ["uPort mobile application", "owner"],
+          "operation": ["notify"],
+          "data": ["signed selective disclosure"]
+        },
+        {
+          "id": 21,
+          "subject": ["client application", "uPort mobile application"],
+          "operation": ["ask"],
+          "data": ["selective disclosure"]
+        },
+        {
+          "id": 22,
+          "subject": ["uPort mobile application", "owner"],
+          "operation": ["ask"],
+          "data": ["selective disclosure request"]
+        },
+        {
+          "id": 23,
+          "subject": ["uPort mobile application", "owner,"],
+          "operation": ["accept"],
+          "data": ["selective disclosure request"]
+        },
+        {
+          "id": 24,
+          "subject": ["uPort mobile application", "owner"],
+          "operation": ["reject"],
+          "data": ["selective disclosure request"]
+        },
+        {
+          "id": 25,
+          "subject": ["uPort mobile application"],
+          "operation": ["create"],
+          "data": ["selective disclosure response"]
+        },
+        {
+          "id": 26,
+          "subject": ["uPort mobile application"],
+          "operation": ["sign"],
+          "data": ["selective disclosure response"]
+        },
+        {
+          "id": 27,
+          "subject": ["uPort mobile application", "client application"],
+          "operation": ["send"],
+          "data": ["selective disclosure response"]
         }
-    ]
+      ]
 }

@@ -1,42 +1,322 @@
 {
     "SSI Systemic Meaning": [
         {
-            "id" : 1,
-            "subject": [
-                "holder"
-            ],
-            "operation": [
-                "use"
-            ],
-            "data": [
-                "username",
-                "password"
-            ]
+          "id": 1,
+          "subject": ["holder"],
+          "operation": ["register"],
+          "data": ["user account"]
         },
         {
-            "id" : 2,
-            "subject": [
-                "wallet application"
-            ],
-            "operation": [
-                "verify"
-            ],
-            "data": [
-                "username",
-                "password"
-            ]
+          "id": 2,
+          "subject": ["holder"],
+          "operation": ["create"],
+          "data": ["cloud agent"]
         },
         {
-            "id" : 3,
-            "subject": [
-                "holder"
-            ],
-            "operation": [
-                "create"
-            ],
-            "data": [
-                "identity"
-            ]
+          "id": 3,
+          "subject": ["issuer"],
+          "operation": ["create"],
+          "data": ["cloud agent"]
+        },
+        {
+          "id": 4,
+          "subject": ["verifier"],
+          "operation": ["create"],
+          "data": ["cloud agent"]
+        },
+        {
+          "id": 5,
+          "subject": ["holder"],
+          "operation": ["create"],
+          "data": ["decentralized identifier","key"]
+        },
+        {
+          "id": 6,
+          "subject": ["issuer"],
+          "operation": ["create"],
+          "data": ["decentralized identifier","key"]
+        },
+        {
+          "id": 7,
+          "subject": ["verifier"],
+          "operation": ["create"],
+          "data": ["decentralized identifier","key"]
+        },
+        {
+          "id": 8,
+          "subject": ["cloud agent","observer node"],
+          "operation": ["write"],
+          "data": ["decentralized identifier","key"]
+        },
+        {
+          "id": 9,
+          "subject": ["observer node","validator node"],
+          "operation": ["send"],
+          "data": ["write request"]
+        },
+        {
+          "id": 10,
+          "subject": ["validator node"],
+          "operation": ["broadcast"],
+          "data": ["write request"]
+        },
+        {
+          "id": 11,
+          "subject": ["validator node"],
+          "operation": ["perform","consensus"],
+          "data": ["write request"]
+        },
+        {
+          "id": 12,
+          "subject": ["holder","issuer","verifier"],
+          "operation": ["enter"],
+          "data": ["agent name"]
+        },
+        {
+          "id": 13,
+          "subject": ["holder","issuer","verifier"],
+          "operation": ["read"],
+          "data": ["decentralized identifier", "agent address"]
+        },
+        {
+          "id": 14,
+          "subject": ["holder"],
+          "operation": ["login"],
+          "data": ["mobile application"]
+        },
+        {
+          "id": 15,
+          "subject": ["holder", "issuer", "verifier"],
+          "operation": ["enter"],
+          "data": ["agent address"]
+        },
+        {
+          "id": 16,
+          "subject": ["holder"],
+          "operation": ["create"],
+          "data": ["connection"]
+        },
+        {
+          "id": 17,
+          "subject": ["cloud agent"],
+          "operation": ["connect", "exchange"],
+          "data": ["decentralized identifier", "agent address"]
+        },
+        {
+          "id": 18,
+          "subject": ["cloud agent", "observer node"],
+          "operation": ["read"],
+          "data": ["decentralized identifier document", "key"]
+        },
+        {
+          "id": 19,
+          "subject": ["holder", "issuer", "verifier"],
+          "operation": ["accept"],
+          "data": ["connection"]
+        },
+        {
+          "id": 20,
+          "subject": ["holder", "issuer", "verifier"],
+          "operation": ["reject"],
+          "data": ["connection"]
+        },
+        {
+          "id": 21,
+          "subject": ["holder", "issuer", "verifier"],
+          "operation": ["read"],
+          "data": ["credential offer"]
+        },
+        {
+          "id": 22,
+          "subject": ["holder", "issuer", "verifier"],
+          "operation": ["delete"],
+          "data": ["connection"]
+        },
+        {
+          "id": 23,
+          "subject": ["holder", "issuer", "verifier"],
+          "operation": ["read"],
+          "data": ["notification"]
+        },
+        {
+          "id": 24,
+          "subject": ["holder"],
+          "operation": ["view"],
+          "data": ["credential"]
+        },
+        {
+          "id": 25,
+          "subject": ["holder", "issuer"],
+          "operation": ["ask", "send"],
+          "data": ["credential offer"]
+        },
+        {
+          "id": 26,
+          "subject": ["issuer", "holder"],
+          "operation": ["read"],
+          "data": ["request"]
+        },
+        {
+          "id": 27,
+          "subject": ["issuer", "holder"],
+          "operation": ["send"],
+          "data": ["credential offer"]
+        },
+        {
+          "id": 28,
+          "subject": ["holder"],
+          "operation": ["accept"],
+          "data": ["credential offer"]
+        },
+        {
+          "id": 29,
+          "subject": ["holder"],
+          "operation": ["provide"],
+          "data": ["claim"]
+        },
+        {
+          "id": 30,
+          "subject": ["holder", "issuer"],
+          "operation": ["send"],
+          "data": ["claim"]
+        },
+        {
+          "id": 31,
+          "subject": ["issuer"],
+          "operation": ["issue"],
+          "data": ["credential"]
+        },
+        {
+          "id": 32,
+          "subject": ["issuer", "holder"],
+          "operation": ["send"],
+          "data": ["credential"]
+        },
+        {
+          "id": 33,
+          "subject": ["holder"],
+          "operation": ["save"],
+          "data": ["credential"]
+        },
+        {
+          "id": 34,
+          "subject": ["holder"],
+          "operation": ["delete"],
+          "data": ["credential"]
+        },
+        {
+          "id": 35,
+          "subject": ["holder"],
+          "operation": ["delete"],
+          "data": ["agent"]
+        },
+        {
+          "id": 36,
+          "subject": ["holder"],
+          "operation": ["change"],
+          "data": ["password"]
+        },
+        {
+          "id": 37,
+          "subject": ["holder"],
+          "operation": ["view"],
+          "data": ["credential"]
+        },
+        {
+          "id": 38,
+          "subject": ["holder"],
+          "operation": ["create"],
+          "data": ["proof", "credential"]
+        },
+        {
+          "id": 39,
+          "subject": ["holder"],
+          "operation": ["view"],
+          "data": ["proof"]
+        },
+        {
+          "id": 40,
+          "subject": ["holder"],
+          "operation": ["delete"],
+          "data": ["proof"]
+        },
+        {
+          "id": 41,
+          "subject": ["verifier", "holder"],
+          "operation": ["send"],
+          "data": ["proof request"]
+        },
+        {
+          "id": 42,
+          "subject": ["holder"],
+          "operation": ["read"],
+          "data": ["proof request"]
+        },
+        {
+          "id": 43,
+          "subject": ["holder"],
+          "operation": ["select"],
+          "data": ["credential"]
+        },
+        {
+          "id": 44,
+          "subject": ["holder"],
+          "operation": ["accept"],
+          "data": ["proof request"]
+        },
+        {
+          "id": 45,
+          "subject": ["holder"],
+          "operation": ["reject"],
+          "data": ["proof request"]
+        },
+        {
+          "id": 46,
+          "subject": ["holder", "verifier"],
+          "operation": ["send"],
+          "data": ["proof"]
+        },
+        {
+          "id": 47,
+          "subject": ["verifier"],
+          "operation": ["read"],
+          "data": ["proof"]
+        },
+        {
+          "id": 48,
+          "subject": ["verifier"],
+          "operation": ["accept"],
+          "data": ["proof"]
+        },
+        {
+          "id": 49,
+          "subject": ["verifier"],
+          "operation": ["reject"],
+          "data": ["proof"]
+        },
+        {
+          "id": 50,
+          "subject": ["steward"],
+          "operation": ["register"],
+          "data": ["validator node"]
+        },
+        {
+          "id": 51,
+          "subject": ["steward"],
+          "operation": ["verify"],
+          "data": ["validator node"]
+        },
+        {
+          "id": 52,
+          "subject": ["holder", "issuer", "verifier"],
+          "operation": ["define"],
+          "data": ["policy quantifier"]
+        },
+        {
+          "id": 53,
+          "subject": ["holder", "issuer", "verifier"],
+          "operation": ["recover"],
+          "data": ["key", "cloud agent"]
         }
-    ]
+      ]
 }

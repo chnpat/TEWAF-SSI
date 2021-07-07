@@ -1,25 +1,25 @@
 {
     "SSI Systemic Meaning": [
         {
-            "id" : 1,
+            "id": 1,
             "subject": [
                 "holder"
             ],
             "operation": [
-                "use"
+                "register"
             ],
             "data": [
-                "username",
-                "password"
+                "user account"
             ]
         },
         {
-            "id" : 2,
+            "id": 2,
             "subject": [
-                "wallet application"
+                "holder",
+                "agent manager"
             ],
             "operation": [
-                "verify"
+                "login"
             ],
             "data": [
                 "username",
@@ -27,7 +27,19 @@
             ]
         },
         {
-            "id" : 3,
+            "id": 3,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "set"
+            ],
+            "data": [
+                "environment variable"
+            ]
+        },
+        {
+            "id": 4,
             "subject": [
                 "holder"
             ],
@@ -35,7 +47,527 @@
                 "create"
             ],
             "data": [
-                "identity"
+                "agent"
+            ]
+        },
+        {
+            "id": 5,
+            "subject": [
+                "agent manager"
+            ],
+            "operation": [
+                "create"
+            ],
+            "data": [
+                "decentralized identifier",
+                "key"
+            ]
+        },
+        {
+            "id": 6,
+            "subject": [
+                "agent manager",
+                "blockchain service"
+            ],
+            "operation": [
+                "write"
+            ],
+            "data": [
+                "decentralized identifier",
+                "key"
+            ]
+        },
+        {
+            "id": 7,
+            "subject": [
+                "blockchain service",
+                "validator node"
+            ],
+            "operation": [
+                "broadcast"
+            ],
+            "data": [
+                "write request"
+            ]
+        },
+        {
+            "id": 8,
+            "subject": [
+                "validator node"
+            ],
+            "operation": [
+                "perform",
+                "consensus"
+            ],
+            "data": [
+                "write request"
+            ]
+        },
+        {
+            "id": 9,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "enter"
+            ],
+            "data": [
+                "agent name"
+            ]
+        },
+        {
+            "id": 10,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "read"
+            ],
+            "data": [
+                "decentralized identifier",
+                "agent address"
+            ]
+        },
+        {
+            "id": 11,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "login"
+            ],
+            "data": [
+                "mobile application"
+            ]
+        },
+        {
+            "id": 12,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "enter"
+            ],
+            "data": [
+                "agent url"
+            ]
+        },
+        {
+            "id": 13,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "create"
+            ],
+            "data": [
+                "connection"
+            ]
+        },
+        {
+            "id": 14,
+            "subject": [
+                "agent"
+            ],
+            "operation": [
+                "connect",
+                "exchange"
+            ],
+            "data": [
+                "decentralized identifier",
+                "agent url"
+            ]
+        },
+        {
+            "id": 15,
+            "subject": [
+                "agent",
+                "blockchain service"
+            ],
+            "operation": [
+                "read"
+            ],
+            "data": [
+                "decentralized identifier document",
+                "key"
+            ]
+        },
+        {
+            "id": 16,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "accept"
+            ],
+            "data": [
+                "connection"
+            ]
+        },
+        {
+            "id": 17,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "reject"
+            ],
+            "data": [
+                "connection"
+            ]
+        },
+        {
+            "id": 18,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "read"
+            ],
+            "data": [
+                "connection offer"
+            ]
+        },
+        {
+            "id": 19,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "delete"
+            ],
+            "data": [
+                "connection"
+            ]
+        },
+        {
+            "id": 20,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "read"
+            ],
+            "data": [
+                "notification"
+            ]
+        },
+        {
+            "id": 21,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "view"
+            ],
+            "data": [
+                "credential"
+            ]
+        },
+        {
+            "id": 22,
+            "subject": [
+                "holder",
+                "issuer"
+            ],
+            "operation": [
+                "ask",
+                "send"
+            ],
+            "data": [
+                "credential offer"
+            ]
+        },
+        {
+            "id": 23,
+            "subject": [
+                "issuer",
+                "holder"
+            ],
+            "operation": [
+                "read"
+            ],
+            "data": [
+                "request"
+            ]
+        },
+        {
+            "id": 24,
+            "subject": [
+                "issuer",
+                "holder"
+            ],
+            "operation": [
+                "send"
+            ],
+            "data": [
+                "credential offer"
+            ]
+        },
+        {
+            "id": 25,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "accept"
+            ],
+            "data": [
+                "credential offer"
+            ]
+        },
+        {
+            "id": 26,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "provide"
+            ],
+            "data": [
+                "claim"
+            ]
+        },
+        {
+            "id": 27,
+            "subject": [
+                "holder, issuer"
+            ],
+            "operation": [
+                "send"
+            ],
+            "data": "claim"
+        },
+        {
+            "id": 28,
+            "subject": [
+                "issuer"
+            ],
+            "operation": [
+                "issue"
+            ],
+            "data": [
+                "credential"
+            ]
+        },
+        {
+            "id": 29,
+            "subject": [
+                "issuer",
+                "holder"
+            ],
+            "operation": [
+                "send"
+            ],
+            "data": [
+                "credential"
+            ]
+        },
+        {
+            "id": 30,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "save"
+            ],
+            "data": [
+                "credential"
+            ]
+        },
+        {
+            "id": 31,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "delete"
+            ],
+            "data": [
+                "credential"
+            ]
+        },
+        {
+            "id": 32,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "delete"
+            ],
+            "data": [
+                "agent"
+            ]
+        },
+        {
+            "id": 33,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "change"
+            ],
+            "data": [
+                "password"
+            ]
+        },
+        {
+            "id": 34,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "view"
+            ],
+            "data": [
+                "credential"
+            ]
+        },
+        {
+            "id": 35,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "create"
+            ],
+            "data": [
+                "proof",
+                "credential"
+            ]
+        },
+        {
+            "id": 36,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "view"
+            ],
+            "data": [
+                "proof"
+            ]
+        },
+        {
+            "id": 37,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "delete"
+            ],
+            "data": [
+                "proof"
+            ]
+        },
+        {
+            "id": 38,
+            "subject": [
+                "verifier",
+                "holder"
+            ],
+            "operation": [
+                "send"
+            ],
+            "data": [
+                "proof request"
+            ]
+        },
+        {
+            "id": 39,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "read"
+            ],
+            "data": [
+                "proof request"
+            ]
+        },
+        {
+            "id": 40,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "select"
+            ],
+            "data": [
+                "credential"
+            ]
+        },
+        {
+            "id": 41,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "accept"
+            ],
+            "data": [
+                "proof request"
+            ]
+        },
+        {
+            "id": 42,
+            "subject": [
+                "holder"
+            ],
+            "operation": [
+                "reject"
+            ],
+            "data": [
+                "proof request"
+            ]
+        },
+        {
+            "id": 43,
+            "subject": [
+                "holder",
+                "verifier"
+            ],
+            "operation": [
+                "send"
+            ],
+            "data": [
+                "proof"
+            ]
+        },
+        {
+            "id": 44,
+            "subject": [
+                "verifier"
+            ],
+            "operation": [
+                "read"
+            ],
+            "data": [
+                "proof"
+            ]
+        },
+        {
+            "id": 45,
+            "subject": [
+                "verifier"
+            ],
+            "operation": [
+                "accept"
+            ],
+            "data": [
+                "proof"
+            ]
+        },
+        {
+            "id": 46,
+            "subject": [
+                "verifier"
+            ],
+            "operation": [
+                "reject"
+            ],
+            "data": [
+                "proof"
             ]
         }
     ]
