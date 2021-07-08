@@ -1,0 +1,288 @@
+{
+    "potential weakness": [
+        {
+            "SSI systemic meaning": {
+                "id": 2,
+                "subject": [
+                    "entity agent",
+                    "holder",
+                    "user",
+                    "entity subject",
+                    "owner"
+                ],
+                "operation": [
+                    "produce",
+                    "make",
+                    "create"
+                ],
+                "data": [
+                    "IPFS",
+                    "attribute",
+                    "identity",
+                    " identity vault",
+                    "personal information",
+                    "identity attribute"
+                ]
+            },
+            "CWE weakness meaning": {
+                "id": 211,
+                "system component": [
+                    "application",
+                    "interpreter"
+                ],
+                "system function": [
+                    "perform",
+                    "operate",
+                    "generate"
+                ],
+                "system object": [
+                    "external diagnostic",
+                    "error message",
+                    "sensitive information"
+                ]
+            },
+            "linguistic association": [
+                {
+                    "first": "identity attribute",
+                    "firstType": "data",
+                    "second": "sensitive information",
+                    "secondType": "systemObject",
+                    "justification": ""
+                },
+                {
+                    "first": "create",
+                    "firstType": "operation",
+                    "second": "generate",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                }
+            ]
+        },
+        {
+            "SSI systemic meaning": {
+                "id": 8,
+                "subject": [
+                    " wallet application",
+                    " wallet",
+                    " blockchain node",
+                    "mobile application",
+                    "blockchain",
+                    " application",
+                    "Ethereum Blockchain",
+                    "uPort mobile application"
+                ],
+                "operation": [
+                    "publish",
+                    "drop a line",
+                    "pen",
+                    "compose",
+                    "write",
+                    "save",
+                    "spell",
+                    "indite"
+                ],
+                "data": [
+                    "signing key",
+                    "encryption key",
+                    "IPFS",
+                    "private key",
+                    "attribute",
+                    "secret key",
+                    "identity",
+                    "key",
+                    " identity vault",
+                    "public key",
+                    "personal information",
+                    "identity attribute"
+                ]
+            },
+            "CWE weakness meaning": {
+                "id": 317,
+                "system component": [
+                    "application"
+                ],
+                "system function": [
+                    "store"
+                ],
+                "system object": [
+                    "sensitive information",
+                    "cleartext"
+                ]
+            },
+            "linguistic association": [
+                {
+                    "first": "key",
+                    "firstType": "data",
+                    "second": "sensitive information",
+                    "secondType": "systemObject",
+                    "justification": ""
+                },
+                {
+                    "first": "identity attribute",
+                    "firstType": "data",
+                    "second": "sensitive information",
+                    "secondType": "systemObject",
+                    "justification": ""
+                },
+                {
+                    "first": "write",
+                    "firstType": "operation",
+                    "second": "store",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                },
+                {
+                    "first": "save",
+                    "firstType": "operation",
+                    "second": "store",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                }
+            ]
+        },
+        {
+            "SSI systemic meaning": {
+                "id": 9,
+                "subject": [
+                    "IPFS",
+                    " blockchain node",
+                    "blockchain",
+                    "identity",
+                    " identity vault",
+                    "Ethereum Blockchain"
+                ],
+                "operation": [
+                    "publish",
+                    "drop a line",
+                    "pen",
+                    "compose",
+                    "write",
+                    "save",
+                    "spell",
+                    "indite"
+                ],
+                "data": [
+                    "key,",
+                    "IPFS",
+                    "attribute",
+                    "identity",
+                    " identity vault",
+                    "personal information",
+                    "identity attribute"
+                ]
+            },
+            "CWE weakness meaning": {
+                "id": 317,
+                "system component": [
+                    "application"
+                ],
+                "system function": [
+                    "store"
+                ],
+                "system object": [
+                    "sensitive information",
+                    "cleartext"
+                ]
+            },
+            "linguistic association": [
+                {
+                    "first": "identity attribute",
+                    "firstType": "data",
+                    "second": "sensitive information",
+                    "secondType": "systemObject",
+                    "justification": ""
+                },
+                {
+                    "first": "write",
+                    "firstType": "operation",
+                    "second": "store",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                },
+                {
+                    "first": "save",
+                    "firstType": "operation",
+                    "second": "store",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                }
+            ]
+        },
+        {
+            "SSI systemic meaning": {
+                "id": 17,
+                "subject": [
+                    " wallet application",
+                    " wallet",
+                    "internal validator",
+                    "mobile application",
+                    " application",
+                    "issuer",
+                    "validator",
+                    "external validator",
+                    "uPort mobile application",
+                    "controller"
+                ],
+                "operation": [
+                    "verify",
+                    "affirm",
+                    "control",
+                    "aver",
+                    "avow",
+                    "swear",
+                    "swan",
+                    "assert"
+                ],
+                "data": [
+                    "verifiable claim. credential",
+                    "selective disclosure response"
+                ]
+            },
+            "CWE weakness meaning": {
+                "id": 284,
+                "system component": [
+                    "software",
+                    "user"
+                ],
+                "system function": [
+                    "restrict",
+                    "access",
+                    "verify"
+                ],
+                "system object": [
+                    "resource"
+                ]
+            },
+            "linguistic association": [
+                {
+                    "first": "internal validator",
+                    "firstType": "subject",
+                    "second": "user",
+                    "secondType": "systemComponent",
+                    "justification": ""
+                },
+                {
+                    "first": "issuer",
+                    "firstType": "subject",
+                    "second": "user",
+                    "secondType": "systemComponent",
+                    "justification": ""
+                },
+                {
+                    "first": "external validator",
+                    "firstType": "subject",
+                    "second": "user",
+                    "secondType": "systemComponent",
+                    "justification": ""
+                },
+                {
+                    "first": "verify",
+                    "firstType": "operation",
+                    "second": "verify",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                }
+            ]
+        }
+    ]
+}

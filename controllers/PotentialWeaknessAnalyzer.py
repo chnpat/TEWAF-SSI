@@ -9,12 +9,19 @@ nlp = spacy.load('en_core_web_md')
 
 
 class PotentialWeaknessAnalyzer:
-    def __init__(self) -> None:
+    def __init__(self, no_edge=[]) -> None:
         self.tnw = []
         self.iteration = 1
         self.last_node_id = 1
         self.last_edge_id = 1
         self.result = []
+
+        with open("./intermediate files/"+no_edge, 'r') as file:
+            data = json.load(file)
+            file.close()
+
+        print("Read an SSI intitial no edge pairs successfully: {} pairs found.\n".format(len(data)))
+        self.no_edge = data
 
     def read_tnw(self, file):
         with open("./intermediate files/" + file) as tnwfile:
@@ -115,7 +122,10 @@ class PotentialWeaknessAnalyzer:
         sim_score = token1.similarity(token2)
         # print("Similarity ({} , {}): {}".format(token1, token2, sim_score))
 
-        if sim_score > 0.5:
+        if [a,b] in self.no_edge["SSI.No_Edge"] or [b, a] in self.no_edge["SSI.No_Edge"]:
+            return False
+
+        if sim_score > 0.7:
             manual_la = input(
                 "----> Is this ('{}', '{}') pair linguistically associated ? (y/n): ".format(a, b))
             if(manual_la == 'y'):
@@ -123,7 +133,9 @@ class PotentialWeaknessAnalyzer:
                 b_update_id = self.update_node(b, b_id)
                 self.update_edge(a_update_id, b_update_id)
                 return True
-            return False
+            else:
+                self.no_edge["SSI.No_Edge"].append([a,b])
+        return False
 
     def update_node(self, lbl, id):
         if id == -1:

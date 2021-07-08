@@ -1,0 +1,348 @@
+{
+    "potential weakness": [
+        {
+            "SSI systemic meaning": {
+                "id": 3,
+                "subject": [
+                    "user",
+                    "owner",
+                    "holder",
+                    "entity subject",
+                    "entity agent"
+                ],
+                "operation": [
+                    "set up",
+                    "mark",
+                    "dress",
+                    "localise",
+                    "typeset",
+                    "sic",
+                    "set",
+                    "correct",
+                    "prepare",
+                    "limit",
+                    "coiffe",
+                    "determine",
+                    "plant",
+                    "congeal",
+                    "pose",
+                    "go down",
+                    "arrange",
+                    "put",
+                    "localize",
+                    "jell",
+                    "ready",
+                    "gear up",
+                    "rig",
+                    "countersink",
+                    "adjust",
+                    "coiffure",
+                    "fix",
+                    "place",
+                    "go under",
+                    "lay out",
+                    "do",
+                    "fructify",
+                    "define",
+                    "coif",
+                    "position",
+                    "specify",
+                    "lay"
+                ],
+                "data": [
+                    "variable",
+                    " resource",
+                    "environment variable"
+                ]
+            },
+            "CWE weakness meaning": {
+                "id": 688,
+                "system component": [
+                    "software"
+                ],
+                "system function": [
+                    "call",
+                    "specify"
+                ],
+                "system object": [
+                    "function",
+                    "procedure",
+                    "routine",
+                    "variable",
+                    "reference"
+                ]
+            },
+            "linguistic association": [
+                {
+                    "first": "variable",
+                    "firstType": "data",
+                    "second": "variable",
+                    "secondType": "systemObject",
+                    "justification": ""
+                },
+                {
+                    "first": "specify",
+                    "firstType": "operation",
+                    "second": "specify",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                }
+            ]
+        },
+        {
+            "SSI systemic meaning": {
+                "id": 5,
+                "subject": [
+                    "agent manager"
+                ],
+                "operation": [
+                    "produce",
+                    "make",
+                    "create"
+                ],
+                "data": [
+                    "address",
+                    "public key",
+                    "secret key",
+                    "decentralized identifier document",
+                    "private key",
+                    "key",
+                    "encryption key",
+                    "id",
+                    "signing key",
+                    "did",
+                    "identifier",
+                    "decentralized identifier"
+                ]
+            },
+            "CWE weakness meaning": {
+                "id": 211,
+                "system component": [
+                    "application",
+                    "interpreter"
+                ],
+                "system function": [
+                    "perform",
+                    "operate",
+                    "generate"
+                ],
+                "system object": [
+                    "external diagnostic",
+                    "error message",
+                    "sensitive information"
+                ]
+            },
+            "linguistic association": [
+                {
+                    "first": "key",
+                    "firstType": "data",
+                    "second": "sensitive information",
+                    "secondType": "systemObject",
+                    "justification": ""
+                },
+                {
+                    "first": "create",
+                    "firstType": "operation",
+                    "second": "generate",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                }
+            ]
+        },
+        {
+            "SSI systemic meaning": {
+                "id": 6,
+                "subject": [
+                    " blockchain node",
+                    "agent manager",
+                    "blockchain",
+                    "blockchain service"
+                ],
+                "operation": [
+                    "drop a line",
+                    "compose",
+                    "pen",
+                    "spell",
+                    "save",
+                    "write",
+                    "publish",
+                    "indite"
+                ],
+                "data": [
+                    "address",
+                    "public key",
+                    "secret key",
+                    "decentralized identifier document",
+                    "private key",
+                    "key",
+                    "encryption key",
+                    "id",
+                    "signing key",
+                    "did",
+                    "identifier",
+                    "decentralized identifier"
+                ]
+            },
+            "CWE weakness meaning": {
+                "id": 317,
+                "system component": [
+                    "application"
+                ],
+                "system function": [
+                    "store"
+                ],
+                "system object": [
+                    "sensitive information",
+                    "cleartext"
+                ]
+            },
+            "linguistic association": [
+                {
+                    "first": "key",
+                    "firstType": "data",
+                    "second": "sensitive information",
+                    "secondType": "systemObject",
+                    "justification": ""
+                },
+                {
+                    "first": "save",
+                    "firstType": "operation",
+                    "second": "store",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                },
+                {
+                    "first": "write",
+                    "firstType": "operation",
+                    "second": "store",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                }
+            ]
+        },
+        {
+            "SSI systemic meaning": {
+                "id": 26,
+                "subject": [
+                    "user",
+                    "owner",
+                    "holder",
+                    "entity subject",
+                    "entity agent"
+                ],
+                "operation": [
+                    "furnish",
+                    "allow for",
+                    "provide",
+                    "offer",
+                    "bring home the bacon",
+                    "allow",
+                    "put up",
+                    "supply",
+                    "leave",
+                    "cater",
+                    "ply",
+                    "render"
+                ],
+                "data": [
+                    "claim",
+                    "disclosure",
+                    "profile",
+                    "selective disclosure"
+                ]
+            },
+            "CWE weakness meaning": {
+                "id": 211,
+                "system component": [
+                    "application",
+                    "interpreter"
+                ],
+                "system function": [
+                    "perform",
+                    "operate",
+                    "generate"
+                ],
+                "system object": [
+                    "external diagnostic",
+                    "error message",
+                    "sensitive information"
+                ]
+            },
+            "linguistic association": [
+                {
+                    "first": "claim",
+                    "firstType": "data",
+                    "second": "sensitive information",
+                    "secondType": "systemObject",
+                    "justification": ""
+                },
+                {
+                    "first": "put up",
+                    "firstType": "operation",
+                    "second": "generate",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                }
+            ]
+        },
+        {
+            "SSI systemic meaning": {
+                "id": 35,
+                "subject": [
+                    "user",
+                    "owner",
+                    "holder",
+                    "entity subject",
+                    "entity agent"
+                ],
+                "operation": [
+                    "produce",
+                    "make",
+                    "create"
+                ],
+                "data": [
+                    "claim",
+                    "proof",
+                    " critical data",
+                    " sensitive information",
+                    "password",
+                    "verifiable claim",
+                    "credential"
+                ]
+            },
+            "CWE weakness meaning": {
+                "id": 211,
+                "system component": [
+                    "application",
+                    "interpreter"
+                ],
+                "system function": [
+                    "perform",
+                    "operate",
+                    "generate"
+                ],
+                "system object": [
+                    "external diagnostic",
+                    "error message",
+                    "sensitive information"
+                ]
+            },
+            "linguistic association": [
+                {
+                    "first": "claim",
+                    "firstType": "data",
+                    "second": "sensitive information",
+                    "secondType": "systemObject",
+                    "justification": ""
+                },
+                {
+                    "first": "create",
+                    "firstType": "operation",
+                    "second": "generate",
+                    "secondType": "systemFunction",
+                    "justification": ""
+                }
+            ]
+        }
+    ]
+}

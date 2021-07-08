@@ -134,7 +134,7 @@
         },
         {
           "id": 23,
-          "subject": ["uPort mobile application", "owner,"],
+          "subject": ["uPort mobile application", "owner"],
           "operation": ["accept"],
           "data": ["selective disclosure request"]
         },

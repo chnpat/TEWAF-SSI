@@ -331,12 +331,15 @@
         {
             "id": 27,
             "subject": [
-                "holder, issuer"
+                "holder",
+                "issuer"
             ],
             "operation": [
                 "send"
             ],
-            "data": "claim"
+            "data": [
+                "claim"
+            ]
         },
         {
             "id": 28,

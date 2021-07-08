@@ -1,6 +1,111 @@
 {
     "CWE.Entries" : [
         {
+            "id": 9,
+            "SystemComponent": [
+                "ejb method",
+                "ejb requirement descriptor",
+                "application"
+            ],
+            "SystemFunction": [
+                "grant",
+                "access"
+            ],
+            "SystemObject": [
+
+            ]
+        },
+        {
+            "id": 32,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "use",
+                "construct",
+                "neutralize"
+            ],
+            "SystemObject":[
+                "input",
+                "external input",
+                "restricted directory",
+                "pathname",
+                "sequence"
+            ]
+        },
+        {
+            "id": 106,
+            "SystemComponent":[
+                "application"
+            ],
+            "SystemFunction":[
+                "use"
+            ],
+            "SystemObject":[
+                "input validation framework"
+            ]
+        },
+        {
+            "id": 168,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "handle"
+            ],
+            "SystemObject":[
+                "input",
+                "special character",
+                "reserved word"
+            ]
+        },
+        {
+            "id": 194,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "perform",
+                "operate"
+            ],
+            "SystemObject":[
+                "sign extended number",
+                "number"
+            ]
+        },
+        {
+            "id": 211,
+            "SystemComponent":[
+                "application",
+                "interpreter"
+            ],
+            "SystemFunction":[
+                "perform",
+                "operate",
+                "generate"
+            ],
+            "SystemObject":[
+                "external diagnostic",
+                "error message",
+                "sensitive information"
+            ]
+        },
+        {
+            "id": 266,
+            "SystemComponent":[
+                "product",
+                "actor"
+            ],
+            "SystemFunction":[
+                "assign",
+                "create"
+            ],
+            "SystemObject":[
+                "privilege",
+                "sphere of control"
+            ]
+        },
+        {
             "id" : 284,
             "SystemComponent" : [
                 "software",
@@ -13,6 +118,310 @@
             ],
             "SystemObject" : [
                 "resource"
+            ]
+        },
+        {
+            "id": 317,
+            "SystemComponent":[
+                "application"
+            ],
+            "SystemFunction":[
+                "store"
+            ],
+            "SystemObject":[
+                "sensitive information",
+                "cleartext"
+            ]
+        },
+        {
+            "id": 327,
+            "SystemComponent":[
+                "algorithm",
+                "cryptographic algorithm"
+            ],
+            "SystemFunction":[
+                "expose"
+            ],
+            "SystemObject":[
+                "sensitive information"
+            ]
+        },
+        {
+            "id": 368,
+            "SystemComponent":[
+                "product"
+            ],
+            "SystemFunction":[
+                "perform",
+                "switch"
+            ],
+            "SystemObject":[
+                "contexts"
+            ]
+        },
+        {
+            "id": 406,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "monitor",
+                "control"
+            ],
+            "SystemObject":[
+                "network traffic volume"
+            ]
+        },
+        {
+            "id": 447,
+            "SystemComponent":[
+                "ui function",
+                "security feature"
+            ],
+            "SystemFunction":[
+                "support",
+                "implement"
+            ],
+            "SystemObject":[
+            ]
+        },
+        {
+            "id": 453,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "initialize"
+            ],
+            "SystemObject":[
+                "interal variable",
+                "secure value"
+            ]
+        },
+        {
+            "id": 476,
+            "SystemComponent":[
+                "application"
+            ],
+            "SystemFunction":[
+                "dereference"
+            ],
+            "SystemObject":[
+                "pointer"
+            ]
+        },
+        {
+            "id": 537,
+            "SystemComponent":[
+                "system"
+            ],
+            "SystemFunction":[
+                "gain",
+                "access"
+            ],
+            "SystemObject":[
+                "exception"
+            ]
+        },
+        {
+            "id": 576,
+            "SystemComponent":[
+                "program"
+            ],
+            "SystemFunction":[
+                "use",
+                "violate"
+            ],
+            "SystemObject":[
+                "ejb",
+                "enterprise javabean",
+                "package"
+            ]
+        },
+        {
+            "id": 606,
+            "SystemComponent":[
+                "product"
+            ],
+            "SystemFunction":[
+                "check"
+            ],
+            "SystemObject":[
+                "input",
+                "loop",
+                "condition"
+            ]
+        },
+        {
+            "id": 665,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction": [
+                "initialize",
+                "access",
+                "use"
+            ],
+            "SystemObject":[
+                "resource"
+            ]
+        },
+        {
+            "id": 669,
+            "SystemComponent":[
+                "product",
+                "sphere"
+            ],
+            "SystemFunction":[
+                "transfer",
+                "import"
+            ],
+            "SystemObject":[
+                "resource"
+            ]
+        },
+        {
+            "id": 688,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "call",
+                "specify"
+            ],
+            "SystemObject":[
+                "function",
+                "procedure",
+                "routine",
+                "variable",
+                "reference"
+            ]
+        },
+        {
+            "id": 704,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "convert"
+            ],
+            "SystemObject":[
+                "object",
+                "resource",
+                "structure",
+                "type"
+            ]
+        },
+        {
+            "id": 710,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "follow"
+            ],
+            "SystemObject":[
+                "coding rule",
+                "code",
+                "rule"
+            ]
+        },
+        {
+            "id": 779,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "log"
+            ],
+            "SystemObject":[
+                "information"
+            ]
+        },
+        {
+            "id": 829,
+            "SystemComponent":[
+                "software",
+                "source"
+            ],
+            "SystemFunction":[
+                "import",
+                "require",
+                "include"
+            ],
+            "SystemObject":[
+                "executable functionality",
+                "library"
+            ]
+        },
+        {
+            "id": 833,
+            "SystemComponent":[
+                "software"
+            ],
+            "SystemFunction":[
+                "contain",
+                "wait",
+                "lock"
+            ],
+            "SystemObject":[
+                "thread",
+                "segment"
+            ]
+        },
+        {
+            "id": 1124,
+            "SystemComponent":[
+                "code"
+            ],
+            "SystemFunction":[
+                "contain"
+            ],
+            "SystemObject":[
+                "nesting code",
+                "branching code"
+            ]
+        },
+        {
+            "id": 1234,
+            "SystemComponent":[
+                "device"
+            ],
+            "SystemFunction": [
+                "bypass"
+            ],
+            "SystemObject":[
+                "system configuration",
+                "protection"
+            ]
+        },
+        {
+            "id": 1239,
+            "SystemComponent":[
+                "hardware",
+                "product",
+                "register"
+            ],
+            "SystemFunction":[
+                "clear"
+            ],
+            "SystemObject":[
+                "sensitive information"
+            ]
+        },
+        {
+            "id": 1322,
+            "SystemComponent":[
+                "product"
+            ],
+            "SystemFunction":[
+                "use",
+                "block"
+            ],
+            "SystemObject":[
+                "non-blocking model",
+                "thread",
+                "code"
             ]
         }
     ]
