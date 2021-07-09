@@ -1,0 +1,54 @@
+﻿id,subject,operation,data
+1,holder,register,user account
+2,holder,create,cloud agent
+3,issuer,create,cloud agent
+4,verifier,create,cloud agent
+5,holder,create,"""decentralized identifier"", ""key"""
+6,issuer,create,"decentralized identifier, key"
+7,verifier,create,"decentralized identifier, key"
+8,"cloud agent, observer node",write,"decentralized identifier, key"
+9,"observer node, validator node",send,write request
+10,validator node,broadcast,write request
+11,validator node,"perform, consensus",write request
+12,"holder, issuer, verifier",enter,agent name
+13,"holder, issuer, verifier",read,"agent did, agent url"
+14,holder,login,mobile application
+15,"holder, issuer, verifier",enter,agent url
+16,holder,create,connection
+17,cloud agent,"connect, exchange","agent did, agent url"
+18,"cloud agent, observer node",read,"decentralized identifier document, key"
+19,"holder, issuer, verifier",accept,connection
+20,"holder, issuer, verifier",reject,connection
+21,"holder, issuer, verifier",read,credential offer
+22,"holder, issuer, verifier",delete,connection
+23,"holder, issuer, verifier",read,notification
+24,holder,view,credential
+25,"holder, issuer","ask, send",credential offer
+26,"issuer, holder",read,request
+27,"issuer, holder",send,credential offer
+28,holder,accept,credential offer
+29,holder,provide,claim
+30,"holder, issuer",send,claim
+31,issuer,issue,credential
+32,"issuer, holder",send,credential
+33,holder,save,credential
+34,holder,delete,credential
+35,holder,delete,agent
+36,holder,change,password
+37,holder,view,credential
+38,holder,create,"proof, credential"
+39,holder,view,proof
+40,holder,delete,proof
+41,"verifier, holder",send,proof request
+42,holder,read,proof request
+43,holder,select,credential
+44,holder,accept,proof request
+45,holder,reject,proof request
+46,"holder, verifier",send,proof
+47,verifier,read,proof
+48,verifier,accept,proof
+49,verifier,reject,proof
+50,steward,register,validator node
+51,steward,verify,validator node
+52,"holder, issuer, verifier",define,policy quantifier
+53,"holder, issuer, verifier",recover,"key, cloud agent"

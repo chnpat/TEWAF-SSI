@@ -1,0 +1,47 @@
+﻿Id,subject,operation,data
+1,holder,register,user account
+2,"holder, agent manager",login,"username, password"
+3,holder,set,environment variable
+4,holder,create,agent
+5,agent manager,create,"decentralized identifier, key"
+6,"agent manager, blockchain service",write,"decentralized identifier, key"
+7,"blockchain service, validator node",broadcast,write request
+8,validator node,"perform, consensus",write request
+9,holder,enter,agent name
+10,holder,read,"decentralized identifier, agent url"
+11,holder,login,mobile application
+12,holder,enter,agent url
+13,holder,create,connection
+14,agent,"connect, exchange","decentralized identifier, agent url"
+15,"agent, blockchain service",read,"decentralized identifier document, key"
+16,holder,accept,connection
+17,holder,reject,connection
+18,holder,read,connection offer
+19,holder,delete,connection
+20,holder,read,notification
+21,holder,view,credential
+22,"holder, issuer","ask, send",credential offer
+23,"issuer, holder",read,request
+24,"issuer, holder",send to,credential offer
+25,holder,accept,credential offer
+26,holder,provide,claim
+27,"holder, issuer",send to,claim
+28,issuer,issue,credential
+29,"issuer, holder",send to,credential
+30,holder,save,credential
+31,holder,delete,credential
+32,holder,delete,agent
+33,holder,change,password
+34,holder,view,credential
+35,holder,create,"proof, credential"
+36,holder,view,proof
+37,holder,delete,proof
+38,"verifier, holder",send to,proof request
+39,holder,read,proof request
+40,holder,select,credential
+41,holder,accept,proof request
+42,holder,reject,proof request
+43,"holder, verifier",send to,proof
+44,verifier,read,proof
+45,verifier,accept,proof
+46,verifier,reject,proof

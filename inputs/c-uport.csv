@@ -1,0 +1,28 @@
+﻿id,subject,operation,data
+1,"owner, uPort mobile application",register,"username, password"
+2,owner,create,identity
+3,owner,change,identity
+4,owner,read,identity
+5,owner,delete,identity
+6,"uPort mobile application, Ethereum Blockchain",initiate,"proxy smart contract, key"
+7,Ethereum Blockchain,initiate,IPFS
+8,"uPort mobile application, Ethereum Blockchain",write,"identity, key"
+9,"Ethereum Blockchain, IPFS",write,"identity, key, "
+10,owner,use,client application
+11,"client application, uPort mobile application",send,connection request
+12,"uPort mobile application, owner",ask,request
+13,"owner, uPort mobile application",authorize,request
+14,"owner, uPort mobile application",reject,request
+15,"uPort mobile application, client application",send,response
+16,"issuer, uPort mobile application",ask,selective disclosure
+17,"issuer, uPort mobile application",verify,selective disclosure response
+18,"issuer, uPort mobile application",send to,signed selective disclosure
+19,uPort mobile application,save,signed selective disclosure
+20,"uPort mobile application, owner",notify,signed selective disclosure
+21,"client application, uPort mobile application",ask,selective disclosure
+22,"uPort mobile application, owner",ask,selective disclosure request
+23,"uPort mobile application, owner,",accept,selective disclosure request
+24,"uPort mobile application, owner",reject,selective disclosure request
+25,uPort mobile application,create,selective disclosure response
+26,uPort mobile application,sign,selective disclosure response
+27,"uPort mobile application, client application",send,selective disclosure response
