@@ -61,7 +61,7 @@
         "description": "The software does not restrict or incorrectly restricts access to a resource from an unauthorized actor.",
         "ext_description": "Access control involves the use of several protection mechanisms such as: Authentication (proving the identity of an actor) Authorization (ensuring that a given actor can access a resource), and Accountability (tracking of activities that were performed) When any mechanism is not applied or otherwise fails, attackers can compromise the security of the software by gaining privileges, reading sensitive information, executing commands, evading detection, etc. There are two distinct behaviors that can introduce access control weaknesses: Specification: incorrect privileges, permissions, ownership, etc. are explicitly specified for either the user or the resource (for example, setting a password file to be world-writable, or giving administrator capabilities to a guest user). This action could be performed by the program or the administrator. Enforcement: the mechanism contains errors that prevent it from properly enforcing the specified access control requirements (e.g., allowing the user to specify their own privileges, or allowing a syntactically-incorrect ACL to produce insecure settings). This problem occurs within the program itself, in that it does not actually enforce the intended security policy that the administrator specifies.",
         "demonstrative_examples": "",
-        "truth": true
+        "truth": false
     },
     {
         "id": 317,
@@ -165,7 +165,8 @@
         "name": "CWE-688: Function Call With Incorrect Variable or Reference as Argument",
         "description": "The software calls a function, procedure, or routine, but the caller specifies the wrong variable or reference as one of the arguments, which may lead to undefined behavior and resultant weaknesses.",
         "ext_description": "",
-        "demonstrative_examples": "Example 1 In the following Java snippet, the accessGranted() method is accidentally called with the static ADMIN_ROLES array rather than the user roles. (bad code) Example Language: Java private static final String[] ADMIN_ROLES = ...; public boolean void accessGranted(String resource, String user) { String[] userRoles = getUserRoles(user); return accessGranted(resource, ADMIN_ROLES); } private boolean void accessGranted(String resource, String[] userRoles) { // grant or deny access based on user roles ... }","truth": true
+        "demonstrative_examples": "Example 1 In the following Java snippet, the accessGranted() method is accidentally called with the static ADMIN_ROLES array rather than the user roles. (bad code) Example Language: Java private static final String[] ADMIN_ROLES = ...; public boolean void accessGranted(String resource, String user) { String[] userRoles = getUserRoles(user); return accessGranted(resource, ADMIN_ROLES); } private boolean void accessGranted(String resource, String[] userRoles) { // grant or deny access based on user roles ... }",
+        "truth": true
     },
     {
         "id": 704,

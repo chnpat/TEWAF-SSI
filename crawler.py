@@ -45,22 +45,26 @@ def process_desc(soup):
 
 def main():
 
-    n = [x for x in list_id if x not in [211, 284, 317, 688, 704]]
+    # n = [x for x in list_id if x not in [211, 284, 317, 688, 704]]
 
-    ibm = [211, 317, 688]
-    s = random.sample(n, k = 7)
-    ibm.extend(s)
-    ibm = sorted(ibm)
+    # ibm = [211, 317, 688]
+    # s = random.sample(n, k = 7)
+    # ibm.extend(s)
+    # ibm = sorted(ibm)
 
-    sovrin = [211, 317, 704]
-    s2 = random.sample([x for x in n if x not in s], k=7)
-    sovrin.extend(s2)
-    sovrin = sorted(sovrin)
+    # sovrin = [211, 317, 704]
+    # s2 = random.sample([x for x in n if x not in s], k=7)
+    # sovrin.extend(s2)
+    # sovrin = sorted(sovrin)
 
-    uport = [211, 284, 317]
-    s3 = random.sample([x for x in n if x not in s2], k=7)
-    uport.extend(random.sample(n, k=7))
-    uport = sorted(uport)
+    # uport = [211, 284, 317]
+    # s3 = random.sample([x for x in n if x not in s2], k=7)
+    # uport.extend(s3)
+    # uport = sorted(uport)
+
+    ibm = [211, 317, 406, 476, 576, 669, 688, 779, 833, 1124] 
+    sovrin = [32, 106, 211, 317, 327, 453, 704, 710, 1234, 1239] 
+    uport = [9, 168, 211, 284, 317, 406, 447, 669, 779, 829] 
 
     with open('./intermediate files/cwe-case.json', 'r') as file:
         data = json.load(file)
@@ -73,21 +77,39 @@ def main():
 
         if d["id"] in ibm:
             if(d["id"] in [211, 317, 688]):
-                t_ibm.append(True == d["truth"])
+                if True == d["truth"]:
+                    t_ibm.append("TP")
+                else:
+                    t_ibm.append("FP")
             else:
-                t_ibm.append(False == d["truth"])
+                if False == d["truth"]:
+                    t_ibm.append("TN")
+                else:
+                    t_ibm.append("FN")
 
         if d["id"] in sovrin:
             if(d["id"] in [211, 317, 704]):
-                t_sov.append(True == d["truth"])
+                if True == d["truth"]:
+                    t_sov.append("TP")
+                else:
+                    t_sov.append("FP")
             else:
-                t_sov.append(False == d["truth"])
+                if False == d["truth"]:
+                    t_sov.append("TN")
+                else:
+                    t_sov.append("FN")
 
         if d["id"] in uport:
             if(d["id"] in [211, 284, 317]):
-                t_upo.append(True == d["truth"])
+                if True == d["truth"]:
+                    t_upo.append("TP")
+                else:
+                    t_upo.append("FP")
             else:
-                t_upo.append(False == d["truth"])
+                if False == d["truth"]:
+                    t_upo.append("TN")
+                else:
+                    t_upo.append("FN")
 
     print("IBM:\n {} \n {}".format(ibm, t_ibm))
     print("Sovrin:\n {} \n {}".format(sovrin, t_sov))
@@ -121,3 +143,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# IBM [211, 317, 406, 476, 576, 669, 688, 779, 833, 1124] 
+# SOV [32, 106, 211, 317, 327, 453, 704, 710, 1234, 1239] 
+# UPO [9, 168, 211, 284, 317, 406, 447, 669, 779, 829] 

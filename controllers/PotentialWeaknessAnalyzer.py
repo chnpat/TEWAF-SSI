@@ -43,6 +43,8 @@ class PotentialWeaknessAnalyzer:
         print("----------------------------------------------------------------------")
         self.read_tnw(file)
 
+        count = 0
+
         for s in usm:
 
             for c in cwm:
@@ -54,21 +56,23 @@ class PotentialWeaknessAnalyzer:
                     for sc in c.systemComponent:
                         pw = self.check_la(
                             sb, sc, "subject", "systemComponent", pw)
+                        count += 1
                 # DAT ~ SObj
                 for dt in s.data:
                     for so in c.systemObject:
                         pw = self.check_la(dt, so, "data", "systemObject", pw)
-
+                        count += 1
                 # OPS ~ SFunc
                 for op in s.operation:
                     for sf in c.systemFunction:
                         pw = self.check_la(op, sf, "operation",
                                            "systemFunction", pw)
+                        count += 1
 
                 if self.check_pw(pw):
                     self.result.append(pw)
 
-        print("\n...Potential weaknesses and linguistic associations are analyzed successfully.\n")
+        print("\n...Potential weaknesses and linguistic associations are analyzed successfully from {} pairs.\n".format(count))
         return self.result
 
     def check_in_tnw(self, txt):
@@ -104,14 +108,14 @@ class PotentialWeaknessAnalyzer:
                 # print("( {}:{} , {}:{} )".format(a, atype, b, btype))
                 la = LinguisticAssociation(a, b, atype, btype)
                 pw.add_one_la(la)
-            else:
-                if self.update_la(a, b, a_id, b_id):
-                    la = LinguisticAssociation(a, b, atype, btype)
-                    pw.add_one_la(la)
-        else:
-            if self.update_la(a, b, a_id, b_id):
-                la = LinguisticAssociation(a, b, atype, btype)
-                pw.add_one_la(la)
+        #     else:
+        #         if self.update_la(a, b, a_id, b_id):
+        #             la = LinguisticAssociation(a, b, atype, btype)
+        #             pw.add_one_la(la)
+        # else:
+        #     if self.update_la(a, b, a_id, b_id):
+        #         la = LinguisticAssociation(a, b, atype, btype)
+        #         pw.add_one_la(la)
 
         return pw
 

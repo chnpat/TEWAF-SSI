@@ -37,14 +37,14 @@ class SystemicMeaning:
                     new_subject.update(notion["term"])
                     FoundEqv = True
 
-            if not FoundEqv:
-                more_term = input("""
-                    '{}' is not found in SSO general notion, please add common terms separated by commas (leave empty if it is none): """.format(sb))
-                if more_term != "":
-                    more_term_list = more_term.split(',')
-                    new_subject.update(more_term_list)
-                    more_term_list.append(sb)
-                    notions["SSI.notions"].append({"term": more_term_list})
+            # if not FoundEqv:
+            #     more_term = input("""
+            #         '{}' is not found in SSO general notion, please add common terms separated by commas (leave empty if it is none): """.format(sb))
+            #     if more_term != "":
+            #         more_term_list = more_term.split(',')
+            #         new_subject.update(more_term_list)
+            #         more_term_list.append(sb)
+            #         notions["SSI.notions"].append({"term": more_term_list})
 
         self.subject = list(new_subject)
 
@@ -57,14 +57,14 @@ class SystemicMeaning:
                     new_data.update(notion["term"])
                     FoundEqv = True
             
-            if not FoundEqv:
-                more_term = input("""
-                    '{}' is not found in the SSI general notions, please add common terms separated by commas (leave empty if it is none): """.format(dt))
-                if more_term != "":
-                    more_term_list = more_term.split(',')
-                    new_data.update(more_term_list)
-                    more_term_list.append(dt)
-                    notions["SSI.notions"].append({"term": more_term_list})
+            # if not FoundEqv:
+            #     more_term = input("""
+            #         '{}' is not found in the SSI general notions, please add common terms separated by commas (leave empty if it is none): """.format(dt))
+            #     if more_term != "":
+            #         more_term_list = more_term.split(',')
+            #         new_data.update(more_term_list)
+            #         more_term_list.append(dt)
+            #         notions["SSI.notions"].append({"term": more_term_list})
 
         self.data = list(new_data)
         return notions, notions

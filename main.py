@@ -26,10 +26,10 @@ def main(argv):
     
     # dump evolutionary knowledge
     print("Prepare to save an SSI text network's file successfully: {} nodes and {} edges are prepared.\n".format(len(pwa.tnw["SSI.TextNetwork"]["node"]),len(pwa.tnw["SSI.TextNetwork"]["edge"])))
-    dump_json_to_file(pwa.tnw, "./intermediate files/int-network-updated.json")
+    # dump_json_to_file(pwa.tnw, "./intermediate files/int-network-updated.json")
     print("Prepare to save an SSI general notion's file successfully: {} notions are prepared.\n".format(len(interm["SSI.notions"])))
-    dump_json_to_file(interm, "./intermediate files/int-notions-updated.json")
-    dump_json_to_file(pwa.no_edge, "./intermediate files/int-noedge.json")
+    # dump_json_to_file(interm, "./intermediate files/int-notions-updated.json")
+    # dump_json_to_file(pwa.no_edge, "./intermediate files/int-noedge.json")
 
 def input_args(argv):
     inputfile = ''
@@ -44,7 +44,7 @@ def input_args(argv):
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print('test.py -i <inputfile> -n <intermediatefile> -c <cwmfile> -t <tnwfile>')
+            print('test.py -i <inputfile> -n <intermediatefile> -c <cwmfile> -t <tnwfile> -e <noedgefile>')
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg

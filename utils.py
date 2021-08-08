@@ -19,8 +19,8 @@ ax.plot(x_ibm, t_ibm, label="IBM Verify Credentials", marker='*')
 ax.plot(x_sov, t_sov, label="Sovrin", marker="*")
 ax.plot(x_upo, t_upo, label="uPort", marker='*')
 ax.set_title("Analysis time using TEWAF-SSI", fontdict=font)
-ax.set_xlabel("Time taken (second)")
-ax.set_ylabel("Number of SSI systemic meanings (size of SSI system)")
+ax.set_ylabel("Time taken (second)")
+ax.set_xlabel("Number of SSI systemic meanings (size of SSI system)")
 
 legend = ax.legend(loc='upper center', shadow=True)
 
